@@ -31,7 +31,9 @@ export default function ChatComp({ }: Props) {
             <CardContent className='flex flex-col justify-start h-full overflow-y-auto'>
                 {users.map((user) => {
                     return user.role === "sender" ? (
-                        <div className='flex flex-row-reverse items-center justify-start gap-4 p-2'>
+                        <div
+                            key={user.name}
+                            className='flex flex-row-reverse items-center justify-start gap-4 p-2'>
                             <Avatar>
                                 <AvatarImage src="https://github.com/shadcn.png" />
                                 <AvatarFallback>CN</AvatarFallback>
@@ -46,7 +48,9 @@ export default function ChatComp({ }: Props) {
                             </Card>
                         </div>
                     ) : (
-                        <div className='flex flex-row items-center justify-start gap-4 p-2'>
+                            <div
+                                key={user.name}
+                                className='flex flex-row items-center justify-start gap-4 p-2'>
                             <Avatar>
                                 <AvatarImage src="https://github.com/shadcn.png" />
                                 <AvatarFallback>CN</AvatarFallback>

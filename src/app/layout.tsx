@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import { cn } from "@/lib/utils";
+import SideNav from "@/components/SideNav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,12 +16,19 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>): JSX.Element {
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={inter.className}>
-          {children}
+        <body
+          className={cn("antialiased grid grid-cols-12 min-h-screen gap-0 relative", inter.className)}
+        >
+          <aside className="col-start-1 col-end-2 sticky top-0 left-0">
+            <SideNav />
+          </aside>
+          <main className="col-start-2 col-end-13">
+            {children}
+          </main>
         </body>
       </html>
     </ClerkProvider>

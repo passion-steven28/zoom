@@ -7,16 +7,16 @@ import VideoCompNav from "@/components/VideoCompNav";
 
 export default function Home() {
   return (
-    <main className="grid grid-cols-12 grid-rows-12 gap-4 justify-items-center items-start h-screen py-4">
-      <div className="col-start-2 col-end-8 w-full h-fit">
+    <main className="grid grid-cols-13 grid-rows-12 px-4 gap-4 justify-items-center items-start max-h-screen py-4">
+      <div className="col-start-1 col-end-8 w-full h-fit">
         <VideoCompNav />
       </div>
-      <div className="col-start-2 col-end-8 row-start-2 row-end-12 w-full h-full">
+      <div className="col-start-1 col-end-8 row-start-2 row-end-12 w-full h-full">
         <VideoComp />
       </div>
-      <div className="col-start-2 col-end-8 w-full h-fit">
+      {/* <div className="col-start-1 col-end-8 w-full h-fit">
         <VideoCompFooter />
-      </div>
+      </div> */}
       <div className="col-start-8 col-end-12 row-start-1 row-end-13 w-full h-full">
         <ChatComp />
       </div>
